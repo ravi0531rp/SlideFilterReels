@@ -22,15 +22,21 @@ result = cv2.VideoWriter('Slider_' + curr + '.avi' ,
                          cv2.VideoWriter_fourcc(*'MJPG'), 
                          20, (w,h)) 
 
+prev_frame = init_frame.copy()
 while True:
 	ret,frame = cap.read()
 	if ret:
+		
 		frame = cv2.flip(frame,1)
 		frame = cv2.line(frame , (start,0) , (start,h) , (0,255, 0) , 4)
 		start = start - treadLength
 		init_frame[: , start - treadLength : start , :] = frame[: , start - treadLength : start , :]
+		init_frame[: , : start - treadLength , : ] = prev_frame[: , : start - treadLength , :]
+		prev_frame = frame.copy()
+
 		temp_init = init_frame.copy()
 		temp_init = cv2.line(temp_init , (start,0) , (start,h) , (0,255, 0) , 4)
+		
 		temp_init = cv2.GaussianBlur(temp_init , (9,9) ,0)
 		result.write(temp_init)
 		cv2.imshow("frame",temp_init)
@@ -43,3 +49,5 @@ while True:
 cap.release()
 result.release()
 cv2.destroyAllWindows()
+
+cv2.imwrite('Slider_' + curr +'.jpg' , temp_init)
