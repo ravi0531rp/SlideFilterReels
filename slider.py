@@ -1,8 +1,6 @@
 """
 @author : Ravi Prakash
-
 Created on Friday 12 12:54:53 2020
-
 """
 
 import cv2
@@ -24,9 +22,10 @@ result = cv2.VideoWriter('Slider_' + curr + '.avi' ,
 
 prev_frame = init_frame.copy()
 while True:
+	if start - treadLength <=0:
+			break
 	ret,frame = cap.read()
 	if ret:
-		
 		frame = cv2.flip(frame,1)
 		frame = cv2.line(frame , (start,0) , (start,h) , (0,255, 0) , 4)
 		start = start - treadLength
@@ -41,8 +40,7 @@ while True:
 		result.write(temp_init)
 		cv2.imshow("frame",temp_init)
 
-		if start <=0:
-			break
+		
 		if cv2.waitKey(1) & 0xFF == ord('q'):
 			break 
 
