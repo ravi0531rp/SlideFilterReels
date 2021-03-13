@@ -1,5 +1,5 @@
 # SlideFilterReels
-You see the popular slider filters that they have on Instagram reels or other apps like that, well,this is my implementation of the same.
+You see the popular slider filters that they have on Instagram reels or other apps like that, in which the image is getting edited frame by frame with time as per the movement of the line. Well,this is my implementation of the same.
 
 # Dependencies
 * Python 3.6
