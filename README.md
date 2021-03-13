@@ -6,7 +6,7 @@ You see the popular slider filters that they have on Instagram reels or other ap
 * Opencv 4+
 * Numpy 1.19
 
-#### The dependencies are not rigid, but they have been the primary ones for this project.
+#### <u>The dependencies are not rigid, but they have been the primary ones for this project. </u>
 
 # Algorithm
 * Open the Webcam 
