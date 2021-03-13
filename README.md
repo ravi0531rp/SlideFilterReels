@@ -5,6 +5,7 @@ You see the popular slider filters that they have on Instagram reels or other ap
 * Python 3.6
 * Opencv 4+
 * Numpy 1.19
+* playsound 1.2.2
 
 #### <span style="text-decoration:underline">The dependencies are not rigid, but they have been the primary ones for this project. </span>
 
